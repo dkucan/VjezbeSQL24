@@ -1,0 +1,36 @@
+-- ovo je komentar i neæe se izvesti
+use master;
+drop database if exists ISVU1;
+go
+create database ISVU1;
+go
+use ISVU1;
+create table STUDENT(
+	sifra int not null primary key identity(1,1),
+	Ime varchar(50) not null,
+	Prezime varchar(50) not null,
+	JMBAG char(10),
+);
+create table KOLEGIJ(
+	sifra int not null primary key identity(1,1),
+	naziv varchar(50) not null,
+	ECTS int not null,
+	Opis varchar(50)
+);
+create table STUDENTKOLEGIJ(
+	sifra int not null primary key identity(1,1),
+	Student int not null,
+	Kolegij int not null,
+	Datumupisa datetime not null,
+	Akademskagodina int not null,
+);
+create table AKADEMSKAGODINA(
+	sifra int not null primary key identity(1,1),
+	Naziv int not null,
+	Datumpocetka datetime not null,
+	Datumzavrsetka datetime not null
+);
+alter table STUDENTKOLEGIJ add foreign key (Student) references STUDENT(sifra); 
+alter table STUDENTKOLEGIJ add foreign key (Kolegij) references KOLEGIJ (sifra);
+alter table STUDENTKOLEGIJ add foreign key (Akademskagodina) references AKADEMSKAGODINA(sifra);
+
