@@ -1,4 +1,4 @@
--- ovo je komentar i ne�e se izvesti
+﻿-- ovo je komentar i neæe se izvesti
 use master;
 drop database if exists ISVU1;
 go
@@ -9,11 +9,11 @@ create table STUDENT(
 	sifra int not null primary key identity(1,1),
 	Ime varchar(50) not null,
 	Prezime varchar(50) not null,
-	JMBAG char(10),
+	JMBAG char(10)
 );
 create table KOLEGIJ(
 	sifra int not null primary key identity(1,1),
-	naziv varchar(50) not null,
+	Naziv varchar(50) not null,
 	ECTS int not null,
 	Opis varchar(50)
 );
@@ -33,4 +33,18 @@ create table AKADEMSKAGODINA(
 alter table STUDENTKOLEGIJ add foreign key (Student) references STUDENT(sifra); 
 alter table STUDENTKOLEGIJ add foreign key (Kolegij) references KOLEGIJ (sifra);
 alter table STUDENTKOLEGIJ add foreign key (Akademskagodina) references AKADEMSKAGODINA(sifra);
+
+insert into STUDENT (Ime, Prezime, JMBAG) values ('Pero', 'Perić', '1234567891');
+insert into STUDENT (Ime, Prezime, JMBAG) values ('Đuro', 'Perić', '1234567892');
+insert into STUDENT (Ime, Prezime, JMBAG) values ('Marko', 'Marković', '1234567893');
+insert into STUDENT (Ime, Prezime, JMBAG) values ('Ivana', 'Marković', '1234567894');
+
+insert into KOLEGIJ (Naziv, ECTS, Opis) values ('Rimsko_pravo', '6', 'rimsko_pravo');
+insert into KOLEGIJ (Naziv, ECTS, Opis) values ('Teorija_prava_i_drzave', '5', 'tpd');
+insert into KOLEGIJ (Naziv, ECTS, Opis) values ('Sociologija', '3', 'sociologija');
+Insert into KOLEGIJ (Naziv, ECTS, Opis) values ('Engleski_jezik', '4', 'engleski');
+
+
+
+
 
