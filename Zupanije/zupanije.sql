@@ -6,26 +6,34 @@ create database ZUPANIJE;
 go
 use ZUPANIJE;
 create table ZUPANIJA(
-	sifra int not null primary key identity(1,1),
-	naziv varchar(50) not null,
-	zupan varchar(50) not null,
+	Sifra int not null primary key identity(1,1),
+	Naziv varchar(50) not null,
+	Zupan varchar(50) not null,
 );
 create table OPCINA(
 	sifra int not null primary key identity(1,1),
-	zupanija int not null,
-	naziv varchar(50)
+	Zupanija int not null,
+	Naziv varchar(50)
 );
 create table MJESTO(
-	sifra int not null primary key identity(1,1),
-	opcina int not null,
-	naziv varchar(50) not null
+	Sifra int not null primary key identity(1,1),
+	Opcina int not null,
+	Naziv varchar(50) not null
 );
 create table ZUPAN(
-	sifra int not null primary key identity(1,1),
+	Sifra int not null primary key identity(1,1),
 	Ime varchar(50) not null,
-	Prezime varchar(50) not null
+	Prezime varchar(50) not null,
+	Zupanija int
 );
 alter table OPCINA add foreign key (ZUPANIJA) references zupanija (sifra); 
 alter table MJESTO add foreign key (OPCINA) references opcina (sifra);
 alter table ZUPAN add foreign key (ZUPANIJA) references zupanija (sifra);
+
+	insert into ZUPANIJA (Naziv, Zupan) values ('Osjecko_baranjska', 'Pero Peric');
+	insert into ZUPANIJA (Naziv, Zupan) values ('Primorsko_goranska', 'Djuro Djuric');
+
+	insert into OPCINA (Zupanija, Naziv) values ('1', 'Osijek');
+	insert into OPCINA (Zupanija, Naziv) values ('2', 'Delnice');
+	insert into OPCINA (Zupanija, Naziv) values ('1', 'Djakovo');
 
