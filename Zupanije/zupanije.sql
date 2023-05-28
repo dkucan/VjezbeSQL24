@@ -37,3 +37,12 @@ alter table ZUPAN add foreign key (ZUPANIJA) references zupanija (sifra);
 	insert into OPCINA (Zupanija, Naziv) values ('2', 'Delnice');
 	insert into OPCINA (Zupanija, Naziv) values ('1', 'Djakovo');
 
+	insert into MJESTO (Opcina, Naziv) values ('1', 'Gorjani');
+	Insert into MJESTO (Opcina, Naziv) values ('1', 'Osijek');
+	Insert into MJESTO (Opcina, Naziv) values ('2','Delnice');
+
+	insert into ZUPAN (Ime, Prezime, Zupanija) values('Pero','Peric', '1');
+	Insert into ZUPAN (Ime, Prezime, Zupanija) values ('Djuro', 'Djuric', '2');
+
+	select * from ZUPAN;
+
