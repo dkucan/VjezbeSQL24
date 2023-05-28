@@ -1,4 +1,4 @@
-use master;
+﻿use master;
 go
 drop database if exists Odvjetnik8;
 create database Odvjetnik8;
@@ -40,3 +40,17 @@ alter table SURADNIK_OBRANA add foreign key (OBRANA) references obrana (sifra);
 alter table OBRANA add foreign key (ODVJETNIK) references odvjetnik (sifra);
 alter table OBRANA add foreign key (KLIJENT) references klijent (sifra);
 alter table SURADNIK_OBRANA add foreign key (SURADNIK) references suradnik(sifra);
+
+insert into KLIJENT (Ime, Prezime) values ('Pero', 'Perić');
+insert into KLIJENT (Ime, Prezime) values ('Đuro', 'Đurić');
+insert into KLIJENT (Ime, Prezime) values ('Marko', 'Marković');
+Insert into KLIJENT (Ime, Prezime) values ('Ante', 'Antić');
+insert into KLIJENT (Ime, Prezime) values ('Jure', 'Jurić');
+
+insert into ODVJETNIK (Ime, Prezime) values ('Igor', 'Ivković');
+Insert into ODVJETNIK (Ime, Prezime) values ('Ivan', 'Ivković');
+insert into ODVJETNIK (Ime, Prezime) values ('Mario', 'Marić');
+insert into ODVJETNIK (Ime, Prezime) values ('Filip', 'Jurić');
+insert into ODVJETNIK (Ime, Prezime) values ('Zdravko', 'Peric');
+
+
