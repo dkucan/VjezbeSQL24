@@ -51,15 +51,15 @@ insert into KUSTOS (Ime, Prezime, OIB) values ('Iva', 'Ivić', '12345678915');
 
 select * from KUSTOS;
 
-insert into DJELO (Naziv, Procjenjena_vrijednost) values ('Picasso', '185.30'); 
+insert into DJELO (Naziv, Procjenjena_vrijednost) values ('Picasso', '185.30');
 insert into DJELO (Naziv, Procjenjena_vrijednost) values ('Monet', '180.43');
 insert into DJELO (nAZIV, Procjenjena_vrijednost) values ('Rembrandt', '200.00');
 
 select * From DJELO;
 
-insert into IZLOZBA (Naziv, Datum_od, Datum_do, kustos, sponzor, djelo) values ('Picasso', '2023-05-28', '2023-08-28', '1', '2', '1');
-insert into IZLOZBA (Naziv, Datum_od, Datum_do, kustos, sponzor, djelo) values ('Monet', '2023-08-28', '2023-11-28', '2', '1', '2');
-insert into IZLOZBA (Naziv, Datum_od, Datum_do, kustos, sponzor, djelo) values ('Rembrandt', '2023-11-28', '2024-02-28', '3', '3', '3');
+insert into IZLOZBA (Naziv, Datum_od, Datum_do, kustos, sponzor, djelo) values ('Picasso', '2023-05-28', '2023-08-28', 1, 2, 1);
+insert into IZLOZBA (Naziv, Datum_od, Datum_do, kustos, sponzor, djelo) values ('Monet', '2023-08-28', '2023-11-28', 2, 1, 2);
+insert into IZLOZBA (Naziv, Datum_od, Datum_do, kustos, sponzor, djelo) values ('Rembrandt', '2023-11-28', '2024-02-28', 3, 3, 3);
 
 select * from IZLOZBA;
 
