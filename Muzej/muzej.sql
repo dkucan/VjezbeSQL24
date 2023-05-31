@@ -66,6 +66,8 @@ select * from IZLOZBA;
 update KUSTOS set prezime ='Petrovic'
 where sifra=1;
 
+select * from KUSTOS;
+
 
 
 
