@@ -1,7 +1,7 @@
 use master;
 drop database if exists videoteka;
 go
-create database videoteka;
+create database videoteka collate Croatian_CI_AS;
 go
 use videoteka;
 

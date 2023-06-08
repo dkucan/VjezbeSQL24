@@ -2,7 +2,7 @@
 use master;
 drop database if exists ZOO;
 go
-create database ZOO;
+create database ZOO collate Croatian_CI_AS;
 go
 use ZOO;
 

@@ -2,7 +2,7 @@
 use master;
 drop database if exists ISVU1;
 go
-create database ISVU1;
+create database ISVU1 collate Croatian_CI_AS;
 go
 use ISVU1;
 create table STUDENT(

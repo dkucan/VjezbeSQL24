@@ -1,7 +1,7 @@
 use master;
 drop database if exists Knjiznica;
 go
-create database Knjiznica;
+create database Knjiznica collate Croatian_CI_AS;
 go
 use Knjiznica;
 

@@ -1,7 +1,7 @@
 ﻿use master;
 go
 drop database if exists Odvjetnik8;
-create database Odvjetnik8;
+create database Odvjetnik8 collate Croatian_CI_AS;
 go
 use Odvjetnik8;
 

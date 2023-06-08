@@ -1,7 +1,7 @@
 ﻿use master;
 drop database if exists FrizerskiSalon;
 go
-create database FrizerskiSalon;
+create database FrizerskiSalon collate Croatian_CI_AS;
 go
 use FrizerskiSalon;
 

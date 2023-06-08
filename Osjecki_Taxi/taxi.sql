@@ -1,7 +1,7 @@
 use master;
 drop database if exists Osjecki_Taxi;
 go
-create database Osjecki_Taxi;
+create database Osjecki_Taxi collate Croatian_CI_AS;
 go
 use Osjecki_Taxi;
 

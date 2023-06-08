@@ -8,7 +8,7 @@ drop database if exists CEZIH4;
 drop database if exists CEZIH5;
 drop database if exists CEZIH6;
 go
-create database CEZIH;
+create database CEZIH collate Croatian_CI_AS;
 go
 use CEZIH;
 create table PACIJENT(

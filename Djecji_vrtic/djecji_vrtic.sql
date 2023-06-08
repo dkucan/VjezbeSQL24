@@ -1,7 +1,7 @@
 use master;
 drop database if exists DjecjiVrtic;
 go
-create database DjecjiVrtic;
+create database DjecjiVrtic collate Croatian_CI_AS;
 go
 use DjecjiVrtic;
 

@@ -1,7 +1,7 @@
 ﻿use master;
 drop database if exists Muzej;
 go
-create database Muzej;
+create database Muzej collate Croatian_CI_AS;
 go
 use Muzej;
 

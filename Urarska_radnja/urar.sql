@@ -1,7 +1,7 @@
 Use master;
 drop database if exists Urarska_radnja_Silvija;
 go
-create database Urarska_radnja_Silvija;
+create database Urarska_radnja_Silvija collate Croatian_CI_AS;
 go
 use Urarska_radnja_Silvija;
 

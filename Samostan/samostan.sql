@@ -1,7 +1,7 @@
 use master;
 go
 drop database if exists Samostan;
-create database Samostan;
+create database Samostan collate Croatian_CI_AS;
 go
 use Samostan;
 

@@ -2,7 +2,7 @@
 use master;
 drop database if exists ZUPANIJE;
 go
-create database ZUPANIJE;
+create database ZUPANIJE collate Croatian_CI_AS;
 go
 use ZUPANIJE;
 create table ZUPANIJA(
