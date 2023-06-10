@@ -54,3 +54,7 @@ create table SVIDJAMISE_KOMENTAR (
 	alter table SVIDJAMISE add foreign key (OBJAVA) references objava (sifra);
 	alter table SVIDJAMISE_KOMENTAR add foreign key (KOMENTAR) references komentar (sifra);
 	alter table KOMENTAR add foreign key (OBJAVA) references objava (sifra);
+	alter table SVIDJAMISE_KOMENTAR add foreign key (OSOBA) references osoba (sifra);
+	alter table KOMENTAR add foreign key (OSOBA) references osoba (sifra);
+	alter table SVIDJAMISE add foreign key (OSOBA) references osoba (sifra);
+
