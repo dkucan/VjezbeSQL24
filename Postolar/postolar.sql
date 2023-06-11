@@ -86,4 +86,8 @@ create table OBUCA_POPRAVAK (
 			(3, '2023-05-10', 2);
 
 			delete from POPRAVAK where sifra=3;
+
+		select * from OBUCA;
+
+			update OBUCA set vrsta='cipele s visokom petom' where sifra=2;
 			
