@@ -85,10 +85,5 @@ create table OBUCA_POPRAVAK (
 			(2, '2023-05-08', 3),
 			(3, '2023-05-10', 2);
 
-		delete from POPRAVAK where sifra=4;
-		delete from POPRAVAK where obuca=3;
-
-	
-
-
-		
+			delete from POPRAVAK where sifra=3;
+			
