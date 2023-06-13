@@ -34,15 +34,19 @@ alter table STUDENTKOLEGIJ add foreign key (Student) references STUDENT(sifra);
 alter table STUDENTKOLEGIJ add foreign key (Kolegij) references KOLEGIJ (sifra);
 alter table STUDENTKOLEGIJ add foreign key (Akademskagodina) references AKADEMSKAGODINA(sifra);
 
-insert into STUDENT (Ime, Prezime, JMBAG) values ('Pero', 'Perić', '1234567891');
-insert into STUDENT (Ime, Prezime, JMBAG) values ('Đuro', 'Perić', '1234567892');
-insert into STUDENT (Ime, Prezime, JMBAG) values ('Marko', 'Marković', '1234567893');
-insert into STUDENT (Ime, Prezime, JMBAG) values ('Ivana', 'Marković', '1234567894');
+insert into STUDENT (Ime, Prezime, JMBAG) 
+	values 
+		('Pero', 'Perić', '1234567891'),
+		('Đuro', 'Perić', '1234567892'),
+		('Marko', 'Marković', '1234567893'),
+		('Ivana', 'Marković', '1234567894');
 
-insert into KOLEGIJ (Naziv, ECTS, Opis) values ('Rimsko_pravo', '6', 'rimsko_pravo');
-insert into KOLEGIJ (Naziv, ECTS, Opis) values ('Teorija_prava_i_drzave', '5', 'tpd');
-insert into KOLEGIJ (Naziv, ECTS, Opis) values ('Sociologija', '3', 'sociologija');
-Insert into KOLEGIJ (Naziv, ECTS, Opis) values ('Engleski_jezik', '4', 'engleski');
+insert into KOLEGIJ (Naziv, ECTS, Opis) 
+	values 
+		('Rimsko_pravo', '6', 'rimsko_pravo'),
+		('Teorija_prava_i_drzave', '5', 'tpd'),
+		('Sociologija', '3', 'sociologija'),
+		('Engleski_jezik', '4', 'engleski');
 
 
 

@@ -40,16 +40,24 @@ create table POSJETA (
 	alter table POSJETA add foreign key (USLUGA) references usluga (sifra);
 	alter table POSJETA add foreign key (DJELATNIK) references djelatnik(sifra);
 
-	insert into DJELATNIK (Ime, Prezime, OIB, Kontakt) values ('Pero', 'Perić', '20751953568', '0989746781');
-	Insert into DJELATNIK (Ime, Prezime, OIB, Kontakt) values ('Marko', 'Marković', '12345678901', '0999746781');
+	insert into DJELATNIK (Ime, Prezime, OIB, Kontakt) 
+		values 
+		('Pero', 'Perić', 20751953568, 0989746781),
+	    ('Marko', 'Marković', 12345678901, 0999746781),
+		('Antea', 'Matić', 2345678911, 0919746781);
 
-	Insert into KORISNIK (Ime,Prezime, Spol) values ('Martina', 'Martinović','1');
-	Insert into KORISNIK (Ime, Prezime, Spol) values ('Ivana', 'Ivanić', '1');
-	Insert into KORISNIK (Ime, Prezime, Spol) values ('Petra', 'Petrić', '1');
+	Insert into KORISNIK (Ime,Prezime, Spol) 
+		values 
+			
+			('Martina', 'Martinović',1),
+			('Ivana', 'Ivanić', 1),
+			('Petra', 'Petrić', 1);
 
-	Insert into USLUGA (Naziv, Cijena, Trajanje) values ('Pramenovi', '50', '3');
-	Insert into USLUGA (Naziv, Cijena, Trajanje) values ('Zenskosisanje', '30', '1');
-	Insert into USLUGA (Naziv, Cijena, Trajanje) values ('Sisanje', '20', '1');
+	Insert into USLUGA (Naziv, Cijena, Trajanje) 
+		values 
+			('Pramenovi', '50', 3),
+			('Zenskosisanje', '30', 1),
+			('Sisanje', '20', 1);
 
 	insert into POSJETA (Datum, Djelatnik, Korisnik, Usluga) values
                     ('2023-04-24 17:00:00', 1, 1, 3),
@@ -58,6 +66,11 @@ create table POSJETA (
 
 
 	select * from POSJETA;
+	select * from DJELATNIK;
+	select * from KORISNIK;
+	select * from USLUGA;
+	SELECT* from POSJETA;
+
 
 			
 		

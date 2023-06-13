@@ -1,13 +1,13 @@
-use master;
-drop database if exists Knjiznica;
+﻿use master;
+drop database if exists Knjižnica;
 go
-create database Knjiznica collate Croatian_CI_AS;
+create database Knjižnica collate Croatian_CI_AS;
 go
-use Knjiznica;
+use Knjižnica;
 
 
-create table CLAN (
-    Sifra int primary key identity (1,1) not null,
+create table ČLAN (
+    Šifra int primary key identity (1,1) not null,
     Ime varchar(50) not null,
     Prezime varchar(50) not null,
     OIB char(11) null,
@@ -16,19 +16,27 @@ create table CLAN (
 );
 
 create table KNJIGA (
-    Sifra int primary key identity (1,1) not null,
+    Šifra int primary key identity (1,1) not null,
     Naziv varchar(100),
     Zanr varchar(100),
 	Posudba int
 	);
 
 create table POSUDBA (
-    Sifra int primary key identity (1,1) not null,
+    Šifra int primary key identity (1,1) not null,
 	Knjiga int,
     Clan int,
     Razdoblje_od datetime not null,
     Razdoblje_do datetime
 );
 
-alter table KNJIGA add foreign key (POSUDBA) references posudba (sifra);
-ALTER TABLE POSUDBA add foreign key (CLAN) references clan (sifra);
+alter table KNJIGA add foreign key (POSUDBA) references posudba (šifra);
+alter table POSUDBA add foreign key (CLAN) references član (šifra);
+
+insert into ČLAN (Ime, Prezime, OIB, Adresa, Kontakt) 
+	values 
+		('Marija', 'Jelić', 12345678910, 'Jelićeva_5', '0911234678'),
+		('Igor', 'Kovač', 12345678911, 'Masarykova_6', '0922345678'),
+		('Robert', 'Petrić', 12345678912, 'Perkovićeva_7', '0972345578');
+
+
