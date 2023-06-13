@@ -1,38 +1,36 @@
-use master;
-drop database if exists Osnovna_Skola;
+﻿use master;
+drop database if exists Osnovna_škola;
 go
-create database Osnovna_Skola collate Croatian_CI_AS;
+create database Osnovna_škola collate Croatian_CI_AS;
 go
-use Osnovna_Skola;
+use Osnovna_škola;
 
 
-create table UCITELJICA (
-    Sifra int primary key identity (1, 1) not null,
+create table UČITELJICA (
+    Šifra int primary key identity (1, 1) not null,
     Ime varchar(20) not null,
-    Prezime varchar(20) not null
+    Prezime varchar(20) not null,
+	Radionica int
 );
 
 create table DIJETE (
-    Dijete int primary key identity (1, 1) not null,
+    Šifra int primary key identity (1, 1) not null,
     Ime varchar(20) not null,
     Prezime varchar(20) not null,
 	Radionica int
 );
 
 create table RADIONICA (
-    Sifra int primary key identity (1, 1) not null,
+    Šifra int primary key identity (1, 1) not null,
     Naziv varchar(20) not null,
-	Dijete int,
-	Uciteljica int
+    Učiteljica int not null
 );
 
 create table DIJETE_RADIONICA (
-    Dijete  int not null,
-    Radionica int not null,
-	Uciteljica int not null
-	);
+    Dijete int not null,
+	Radionica int not null
+);
 
-	alter table DIJETE_RADIONICA add foreign key (RADIONICA) references radionica (sifra);
-	alter table RADIONICA add foreign key (UCITELJICA) references uciteljica (sifra);
-	alter table DIJETE add foreign key (RADIONICA) references dijete (dijete);
-
+alter table RADIONICA add foreign key (UČITELJICA) references učiteljica (šifra);
+alter table DIJETE_RADIONICA add foreign key (RADIONICA) references radionica (šifra); 
+alter table DIJETE_RADIONICA add foreign key (DIJETE) references dijete (šifra);

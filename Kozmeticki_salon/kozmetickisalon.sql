@@ -41,16 +41,20 @@ create table POSJETA (
    alter table POSJETA add foreign key (DJELATNIK) references djelatnik(sifra);
    alter table POSJETA add foreign key (KORISNIK) references korisnik (sifra);
 
-   insert into DJELATNIK (Ime, Prezime, OIB, Kontakt) values ('Pero', 'Perić', '20751953568', '0989746781');
-   Insert into DJELATNIK (Ime, Prezime, OIB, Kontakt) values ('Marko', 'Marković', '12345678901', '0999746781');
+   insert into DJELATNIK (Ime, Prezime, OIB, Kontakt) 
+		values 
+		('Pero', 'Perić', '20751953568', '0989746781'),
+        ('Marko', 'Marković', '12345678901', '0999746781');
 
-	Insert into KORISNIK (Ime, Prezime, Spol, Kontakt) values ('Martina', 'Martinović', '1', '09112345678');
-	Insert into KORISNIK (Ime, Prezime, Spol, Kontakt) values ('Ivana', 'Ivanić', '1', '09212345678')
-	Insert into KORISNIK (Ime, Prezime, Spol, Kontakt) values ('Petra', 'Petrić', '1', '09912345678');
+	Insert into KORISNIK (Ime, Prezime, Spol, Kontakt) 
+		values ('Martina', 'Martinović', '1', '09112345678'),
+				('Ivana', 'Ivanić', '1', '09212345678'),
+				('Petra', 'Petrić', '1', '09912345678');
 
-	Insert into USLUGA (Naziv, Cijena, Trajanje) values ('Pedikura', '50', '3');
-	Insert into USLUGA (Naziv, Cijena, Trajanje) values ('Solarij', '30', '2');
-	Insert into USLUGA (Naziv, Cijena, Trajanje) values ('Manikura', '20', '1');
+	Insert into USLUGA (Naziv, Cijena, Trajanje) 
+		values ('Pedikura', '50', 3),
+				('Solarij', '30', 2),
+				('Manikura', '20', 1);
 
 	insert into POSJETA (Datum, Djelatnik, Korisnik, Usluga) values
                     ('2023-04-24 17:00:00', 1, 1, 3),
