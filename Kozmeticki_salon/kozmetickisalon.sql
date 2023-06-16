@@ -7,7 +7,7 @@ use KozmetickiSalon;
 
 
 create table DJELATNIK (
-    Sifra int primary key identity (1, 1) not null,
+    Šifra int primary key identity (1, 1) not null,
     Ime varchar(50) not null,
     Prezime varchar(50) not null,
 	OIB char(11) not null,
@@ -15,7 +15,7 @@ create table DJELATNIK (
 );
 
 create table KORISNIK (
-    Sifra int primary key identity (1, 1) not null,
+    Šifra int primary key identity (1, 1) not null,
     Ime varchar(50) not null,
 	Prezime varchar(50) not null,
 	Spol bit not null,
@@ -23,23 +23,23 @@ create table KORISNIK (
 );
 
 create table USLUGA (
-    Sifra int primary key identity (1, 1) not null,
+    Šifra int primary key identity (1, 1) not null,
     Naziv varchar (100) not null,
     Cijena decimal(18,2) not null,
     Trajanje int null
 );
 
 create table POSJETA (
-    Sifra int primary key identity (1,1) not null,
+    Šifra int primary key identity (1,1) not null,
     Datum datetime not null,
 	Djelatnik int not null,
 	Korisnik int not null,
 	Usluga int not null
 	);
 
-   alter table POSJETA add foreign key (USLUGA) references usluga (sifra);
-   alter table POSJETA add foreign key (DJELATNIK) references djelatnik(sifra);
-   alter table POSJETA add foreign key (KORISNIK) references korisnik (sifra);
+   alter table POSJETA add foreign key (USLUGA) references usluga (šifra);
+   alter table POSJETA add foreign key (DJELATNIK) references djelatnik(šifra);
+   alter table POSJETA add foreign key (KORISNIK) references korisnik (šifra);
 
    insert into DJELATNIK (Ime, Prezime, OIB, Kontakt) 
 		values 
@@ -57,9 +57,17 @@ create table POSJETA (
 				('Manikura', '20', 1);
 
 	insert into POSJETA (Datum, Djelatnik, Korisnik, Usluga) values
-                    ('2023-04-24 17:00:00', 1, 1, 3),
-                    ('2023-04-24 17:30:00', 2, 2, 1),
-                    ('2023-04-24 18:00:00', 1, 3, 1);
+                    ('2023-04-24', 1, 1, 3),
+                    ('2023-04-24', 2, 2, 1),
+                    ('2023-04-24', 1, 3, 1);
+
+			update USLUGA set naziv='šminkanje' where šifra=1;
+			update POSJETA set datum='2023-06-16' where šifra=3;
+
+			select * from KORISNIK;
+			select * from USLUGA;
+			select * from POSJETA;
+
 
 
 

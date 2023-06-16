@@ -26,7 +26,7 @@ create table KNJIGA (
 
 create table POSUDBA (
     Šifra int primary key identity (1,1) not null,
-    Clan int,
+    Član int,
     Razdoblje_od datetime not null,
     Razdoblje_do datetime
 );
@@ -54,5 +54,17 @@ insert into KNJIGA (Naziv, Autor, Žanr)
 		('Luna je okrutna ljubavnica', 'Petrović', 'ljubavni'),
 		('Putevima Marka Pola', 'Saletto', 'putopis');
 
+insert into POSUDBA (Razdoblje_od, Razdoblje_do, član) 
+		values
+			(2023-06-02, 2023-06-09, 1),
+			(2023-06-01, 2023-06-08, 2),
+			(2023-06-05, 2023-06-12, 3);
+
+		update KNJIGA set naziv='Atlas Svijeta' where šifra=2;
+		update KNJIGA set autor='Đuro Đurić' where šifra=2;
+		update POSUDBA set razdoblje_do=2023-06-15 where šifra=3;
+
+		select * from POSUDBA;
+		select * from KNJIGA;
 
 

@@ -70,9 +70,15 @@ insert into LIJEK (Naziv, Cijena, Šifra_liječnika)
 		('Kapi_za_oči', '10', 3),
 		('Pfizer', '25', 2);
 
+		update LIJEK set naziv='Controloc' where šifra=4;
+		update PACIJENT set dijagnoza='upala_uha' where šifra=2;
+		update LIJEK set naziv='kapi_za_uši' where šifra=5;
+		update LIJEK set naziv='Sumamed' where šifra=2;
+
 		select * from LIJEČNIK;
 	    select * from PACIJENT;
 		select * from LIJEK;
+
 	
 
 

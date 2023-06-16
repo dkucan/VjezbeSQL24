@@ -7,7 +7,7 @@ use FrizerskiSalon;
 
 
 create table DJELATNIK (
-    Sifra int primary key identity (1,1) not null,
+    Šifra int primary key identity (1,1) not null,
     Ime varchar(50) not null,
     Prezime varchar(50) not null,
     OIB char(11) not null,
@@ -15,30 +15,30 @@ create table DJELATNIK (
 );
 
 create table KORISNIK (
-    Sifra int primary key identity (1,1) not null,
+    Šifra int primary key identity (1,1) not null,
     Ime varchar(50) not null,
     Prezime varchar(50) not null,
     Spol bit not null
 );
 
 create table USLUGA (
-    Sifra int primary key identity (1,1) not null,
+    Šifra int primary key identity (1,1) not null,
     Naziv varchar(100) not null,
     Cijena decimal(18,2) not null,
     Trajanje int not null
 );
 
 create table POSJETA (
-    Sifra int primary key identity (1,1) not null,
+    Šifra int primary key identity (1,1) not null,
     Datum datetime not null,
 	Djelatnik int not null,
 	Korisnik int not null,
 	Usluga int not null
 	);
 
-	alter table POSJETA add foreign key (KORISNIK) references korisnik (sifra);
-	alter table POSJETA add foreign key (USLUGA) references usluga (sifra);
-	alter table POSJETA add foreign key (DJELATNIK) references djelatnik(sifra);
+	alter table POSJETA add foreign key (KORISNIK) references korisnik (šifra);
+	alter table POSJETA add foreign key (USLUGA) references usluga (šifra);
+	alter table POSJETA add foreign key (DJELATNIK) references djelatnik(šifra);
 
 	insert into DJELATNIK (Ime, Prezime, OIB, Kontakt) 
 		values 
@@ -55,9 +55,9 @@ create table POSJETA (
 
 	Insert into USLUGA (Naziv, Cijena, Trajanje) 
 		values 
-			('Pramenovi', '50', 3),
-			('Zenskosisanje', '30', 1),
-			('Sisanje', '20', 1);
+			('Pramenovi', 50, 3),
+			('Zenskosisanje', 30, 1),
+			('Sisanje', 20, 1);
 
 	insert into POSJETA (Datum, Djelatnik, Korisnik, Usluga) values
                     ('2023-04-24 17:00:00', 1, 1, 3),
@@ -71,6 +71,9 @@ create table POSJETA (
 	select * from USLUGA;
 	SELECT* from POSJETA;
 
+	update DJELATNIK set ime='Marina' where šifra=2;
+	update KORISNIK set prezime='Katić' where šifra=1;
+	update USLUGA set naziv='bojanje' where šifra=3;
 
 			
 		

@@ -79,5 +79,11 @@ insert into DIJETE (Ime, Prezime, Dob, OIB, Odgojna_skupina)
 
 		select * from DIJETE;
 
+		update ODGOJNA_SKUPINA set naziv='Tratinčice' where šifra=1;
+		update ODGOJNA_SKUPINA set naziv='Ježići' where šifra=3;
+		update ODGOJNA_SKUPINA set naziv='Maslačci' where šifra=5;
+		update ODGOJNA_SKUPINA set naziv='Ljubičice' where šifra=4;
+		update ODGOJNA_SKUPINA set naziv='Cvjetići' where šifra=2;
+
 		-- izbriši šifre 1,2,3
 		
