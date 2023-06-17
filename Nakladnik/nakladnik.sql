@@ -73,6 +73,8 @@ create table NAKLADNIKDJELO (
 
 			select * from NAKLADNIKDJELO;
 
+			update DJELO set naziv='Napoleon' where šifra=5;
+			update DJELO set Vrstadjela='biografija' where šifra=5;
 
 
 

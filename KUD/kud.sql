@@ -59,6 +59,11 @@ insert into NASTUP (Opis, Mjesto)
 		select * from MJESTO;
 		select * from NASTUP;
 
+		update ČLAN set ime='Martin' where šifra=4;
+		update ČLAN set prezime='Aničić' where šifra=5;
+		update MJESTO set naziv='Pariz' where šifra=3;
+
+
 
 
 

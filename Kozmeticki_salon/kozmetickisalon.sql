@@ -63,6 +63,7 @@ create table POSJETA (
 
 			update USLUGA set naziv='šminkanje' where šifra=1;
 			update POSJETA set datum='2023-06-16' where šifra=3;
+			delete USLUGA where šifra=2;
 
 			select * from KORISNIK;
 			select * from USLUGA;

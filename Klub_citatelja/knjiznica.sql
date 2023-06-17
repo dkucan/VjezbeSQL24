@@ -63,8 +63,10 @@ insert into POSUDBA (Razdoblje_od, Razdoblje_do, član)
 		update KNJIGA set naziv='Atlas Svijeta' where šifra=2;
 		update KNJIGA set autor='Đuro Đurić' where šifra=2;
 		update POSUDBA set razdoblje_do=2023-06-15 where šifra=3;
+		delete ČLAN where šifra=1;
 
 		select * from POSUDBA;
 		select * from KNJIGA;
+		select * from ČLAN;
 
 

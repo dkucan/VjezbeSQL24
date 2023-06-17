@@ -50,6 +50,7 @@ insert into KOLEGIJ (Naziv, ECTS, Opis)
 
 		update STUDENT set ime='Ana' where šifra=2;
 		update KOLEGIJ set naziv='Njemački_jezik' where šifra=4;
+		delete STUDENT where šifra=2;
 
 		select * from STUDENT;
 		SELECT * from KOLEGIJ;

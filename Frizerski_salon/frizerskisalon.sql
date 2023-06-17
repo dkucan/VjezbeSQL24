@@ -73,7 +73,9 @@ create table POSJETA (
 
 	update DJELATNIK set ime='Marina' where šifra=2;
 	update KORISNIK set prezime='Katić' where šifra=1;
-	update USLUGA set naziv='bojanje' where šifra=3;
+	update USLUGA set naziv='bojanje' where šifra=3;;
+	delete POSJETA where šifra=1;
+  
 
 			
 		

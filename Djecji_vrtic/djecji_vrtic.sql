@@ -84,6 +84,7 @@ insert into DIJETE (Ime, Prezime, Dob, OIB, Odgojna_skupina)
 		update ODGOJNA_SKUPINA set naziv='Maslačci' where šifra=5;
 		update ODGOJNA_SKUPINA set naziv='Ljubičice' where šifra=4;
 		update ODGOJNA_SKUPINA set naziv='Cvjetići' where šifra=2;
+		delete DIJETE where šifra=1;
 
 		-- izbriši šifre 1,2,3
 		

@@ -74,6 +74,7 @@ insert into LIJEK (Naziv, Cijena, Šifra_liječnika)
 		update PACIJENT set dijagnoza='upala_uha' where šifra=2;
 		update LIJEK set naziv='kapi_za_uši' where šifra=5;
 		update LIJEK set naziv='Sumamed' where šifra=2;
+		delete PACIJENT where šifra=5;
 
 		select * from LIJEČNIK;
 	    select * from PACIJENT;

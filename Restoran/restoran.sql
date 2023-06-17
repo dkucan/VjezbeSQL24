@@ -10,33 +10,33 @@ use Restoran2;
 
 
 create table JELOVNIK (
-    Sifra int primary key identity (1, 1) not null,
+    Šifra int primary key identity (1, 1) not null,
     KATEGORIJA varchar(30) not null
 );
 
 create table JELO (
-    Sifra int primary key identity (1, 1) not null,
+    Šifra int primary key identity (1, 1) not null,
     Naziv varchar(30) not null,
     Opis varchar(100) not null,
     Cijena decimal(18,2) not null,
     Jelovnik int
 );
 
-create table PICE (
-    Sifra int primary key identity (1, 1) not null,
+create table PIĆE (
+    Šifra int primary key identity (1, 1) not null,
     Naziv varchar(30) not null,
     Vrsta varchar(30) not null,
 	Cijena decimal (18,2)
 );
 
-create table JELO_PICE (
+create table JELO_PIĆE (
 	JELO int not null,
-	PICE int not null
+	PIĆE int not null
 	);
 
-	alter table JELO_PICE add foreign key (PICE) references pice (sifra);
-	alter table JELO_PICE add foreign key (JELO) references jelo (sifra);
-	alter table JELO add foreign key (JELOVNIK) references jelovnik (sifra);
+	alter table JELO_PIĆE add foreign key (PIĆE) references piće (šifra);
+	alter table JELO_PIĆE add foreign key (JELO) references jelo (šifra);
+	alter table JELO add foreign key (JELOVNIK) references jelovnik (šifra);
 
 	select * from JELOVNIK;
 
@@ -44,7 +44,7 @@ create table JELO_PICE (
 		('predjelo'),
 		('glavno_jelo'),
 		('desert'),
-		('pice');
+		('piće');
 
 	select * from JELO;
 
@@ -53,20 +53,20 @@ create table JELO_PICE (
 			('punjene_lignje', 'lignje_sir_sunka', 10, 2),
 			('sladoled', 'cokolada', 1.5, 3);
 
-	select * from PICE;
+	select * from PIĆE;
 
-		insert into PICE (NAZIV, VRSTA, CIJENA) values
+		insert into PIĆE (NAZIV, VRSTA, CIJENA) values
 			('turska_kava', 'topli_napitak', 1),
 			('jack_daniels', 'alkohol', 2.5),
 			('cedevita', 'sok', 1.5);
 
-	select * from JELO_PICE;
+	select * from JELO_PIĆE;
 		
-	update pice set naziv='Ballentines'
-	where sifra=2;
+	update piće set naziv='Ballentines'
+	where šifra=2;
 
 	delete from JELO where jelovnik=2;
-	delete from PICE where sifra=2;
+	delete from PIĆE where šifra=2;
 
 
 
