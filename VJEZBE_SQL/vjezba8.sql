@@ -44,7 +44,7 @@ create table MUŠKARAC (
 Šifra int primary key identity (1,1) not null,
 Haljina varchar(47),
 Drugi_puta datetime not null,
-Treći_puta datetime not null
+Treći_puta datetime
 );
 
 create table MUŠKARAC_DEČKO (
@@ -77,3 +77,73 @@ alter table BEĆAR add foreign key (MUŠKARAC) references muškarac (šifra);
 alter table MUŠKARAC_DEČKO add foreign key (MUŠKARAC) references muškarac (šifra);
 alter table MUŠKARAC_DEČKO add foreign key (DEČKO) references dečko (šifra);
 alter table BRAT add foreign key (NEPRIJATELJ) references neprijatelj (šifra);
+
+select * from MUŠKARAC; 
+
+insert into MUŠKARAC (Drugi_puta)
+values
+
+	('2023-06-19'),
+	('2023-05-27'),
+	('2022-06-23');
+     
+select * from BEĆAR;
+
+insert into BEĆAR(eura,muškarac)
+values 
+
+	(34.22,1),
+	(35.27,2),
+	(47.50,1);
+
+select * from NEPRIJATELJ;
+
+insert into NEPRIJATELJ(ogrlica,bećar)
+	values  
+
+	(3,3),
+	(5,1),
+	(7,2);
+               
+select * from DEČKO;
+
+insert into DEČKO (treći_puta,ogrlica,ekstrovertno)
+	values  
+
+	('2023-06-10',6,0),
+	('2023-06-13',5,1),
+	('2023-06-23',2,1);
+               
+select * from MUŠKARAC_DEČKO;
+insert into MUŠKARAC_DEČKO(muškarac,dečko)
+	values  
+
+	(1,3),
+	(2,2),
+	(3,1);
+
+
+select * from PRIJATELJICA;  
+
+insert into PRIJATELJICA(Naušnica,introvertno)
+	values  
+	(5,0),
+	(3,0),	
+	(7,1);
+
+select * from CURA;
+
+insert intO CURA (Naušnica,ogrlica,prijateljica)
+	values  
+	(3,5,1),
+	(1,4,2),
+	(6,1,3);
+        
+update CURA set indiferentno=0;
+
+select * from BRAT;
+
+delete from BRAT where Novčića!='12.75';
+
+select prvi_puta from bećar where Treći_puta is null;
+	
