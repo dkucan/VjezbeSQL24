@@ -80,3 +80,84 @@ create table MLADIĆ (
 	alter table PRIJATELJICA add foreign key (OSTAVLJEN) references ostavljen (šifra);
 	alter table SESTRA add foreign key (PRIJATELJICA) references prijateljica (šifra);
 	alter table PUNICA add foreign key (CURA) references cura (šifra);
+
+	--1. U tablice prijateljica, ostavljen i zarucnik_mladic unesite po 3 retka.
+
+select * from ZARUČNIK;
+
+insert into ZARUČNIK (asocijalno,narukvica,Novčića)
+	values
+	
+	(1,6,15.78),
+	(0,3,25.98),
+	(1,9,35.79);
+              
+select * from OSTAVLJEN;
+
+insert into OSTAVLJEN (introvertno,Kratka_majica,prstena)
+	values  
+
+	(0,'Plava kratka',7),
+	(1,'Zelena kratka',3),
+	(1,'Crna kratka',11);
+              
+select * from PRIJATELJICA;
+
+insert into PRIJATELJICA(Gustoća,ostavljen)
+	values  
+
+	(22.23,3),
+	(29.54,1),
+	(43.25,2);
+              
+select * from MLADIĆ;
+
+insert into MLADIĆ(lipa,narukvica,drugi_puta)
+	values  
+
+	(12.55,4,'2023-06-05'),
+	(18.78,8,'2023-05-05'),
+	(15.99,2,'2023-04-10');
+              
+select * from ZARUČNIK_MLADIĆ;
+
+insert into ZARUČNIK_MLADIĆ(Zaručnik,Mladić)
+	values  
+
+	(3,2),
+	(1,3),
+	(2,1);
+
+
+select * from CURA;
+
+insert into cura(lipa)
+values
+
+(25.22),
+(38.39),
+(50.50);
+
+select * from PUNICA;
+insert into PUNICA(eura,cura)
+values
+
+(55.44,1),
+(13.55,2),
+(23.55,3);
+        
+update PUNICA set eura=15.77;
+
+
+select * from SESTRA;
+
+insert into SESTRA (Boja_kose,Hlače,Stil_frizura,maraka,prijateljica)
+values 
+		('Plava','Žute','Duga',32.35,1),
+        ('Smeđa','Zelene','Kratka',33.47,2),
+        ('Crna','Crvene','Kratka',50.42, 2);
+       
+delete from SESTRA where  Hlače<'AB';
+
+
+select Kratka_majica from ostavljen where introvertno is null;
