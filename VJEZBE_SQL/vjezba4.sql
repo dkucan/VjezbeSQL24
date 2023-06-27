@@ -71,5 +71,83 @@ create table MLADIĆ (
 	alter table PUNAC add foreign key (OSTAVLJEN) references ostavljen (šifra);
 
 
+select * from ŽENA;
+
+insert into ŽENA(suknja,prstena)
+	values  
+	
+	('Bijela suknja',3),
+	('Zelena suknja',2),
+	('Žuta suknja',1);        
+       
+select * from SNAŠA;
+
+insert into SNAŠA(haljina,žena)
+	values  
+	
+	('Bijela haljina',1),
+	('Žuta haljina',2),
+	('Crvena haljina',3);
+
+select * from BEĆAR
+
+insert into BEĆAR (kratka_majica,boja_očiju,Snaša)    
+	values  
+	
+	('Bijela','Smeđa',2),
+	('Žuta','Plava',1),
+	('Crvena','Zelena',3);
+
+select * from MLADIĆ;
+
+insert into MLADIĆ(vesta)
+	 values  
+	
+	('Smeđa'),
+	('Bijela'),
+	('Žuta');
+             
+select * from ŽENA_MLADIĆ;
+
+insert into ŽENA_MLADIĆ(Žena,Mladić)
+	values 
+
+	(1,3),
+	(3,1),
+	(2,2);
+
+
+select * from OSTAVLJEN;
+
+insert into OSTAVLJEN(Model_naočala)
+
+	values
+
+	('Naočale_1');
+
+select * from PUNAC;
+
+insert into punac(jmbag,NOVČIĆA,maraka,ostavljen)
+	values
+	(12345678910,20.25,30.32,1),
+	(12345678911,30.32,40.99,1),
+	(12345678912, 50.23,50.99,1);
+
+update PUNAC set Majica='Osijek';
+
+
+select * from PRIJATELJ;
+
+insert into PRIJATELJ (prstena,jmbag ,suknja,Bećar)
+	values  
+	
+	(10,34567890,'Bijela',3),
+	(12,45678910,'Žuta',1),
+	(32,56789101,'Zelena',2);
+        
+delete from PRIJATELJ where Prstena > 17;
+
+select * from SNAŠA;
+select HALJINA from SNAŠA where treći_puta is null;
 
 

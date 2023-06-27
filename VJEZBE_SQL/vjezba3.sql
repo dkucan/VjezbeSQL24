@@ -80,3 +80,88 @@ alter table OSTAVLJENA add foreign key (PRIJATELJ) references prijatelj (šifra)
 alter table PUNICA add foreign key (SNAŠA) references snaša (šifra);
 alter table PRIJATELJ_BRAT add foreign key (PRIJATELJ) references prijatelj (šifra);
 alter table PRIJATELJ_BRAT add foreign key (BRAT) references brat (šifra);
+
+
+select * from OSTAVLJENA;
+
+insert into OSTAVLJENA (Model_naočala)
+	values  
+		('Calvin_Klein'),
+        ('Versace'),
+        ('BOSS');
+              
+select * from SNAŠA;
+
+insert into SNAŠA (kuna,eura,ostavljena)
+	values  
+	(5.99,35.99,1),
+	(3.43,24.99,2),
+	(7.99,56.99,3);     
+             
+select * from PRIJATELJ;
+
+insert into PRIJATELJ(indiferentno)
+	values  
+		(1),
+		(1),
+		(0);
+
+select * from BRAT;
+
+insert into BRAT (ogrlica, ekstrovertno)
+	values  
+		(1,1),
+		(2,0),
+		(3,1);
+            
+select * from PRIJATELJ_BRAT;
+
+insert into PRIJATELJ_BRAT(prijatelj,brat)
+	values  
+
+		(3,2), 
+		(1,1), 
+		(2,3);
+
+
+select * from CURA;
+
+insert into CURA(ogrlica)
+	values 
+	
+	(4),
+	(6),
+	(8);
+
+select* from SVEKAR;
+
+insert into SVEKAR(novčića,suknja,narukvica,cura)
+values  
+(22.22,'Plava',7,1),
+(33.11,'Zelena',4,2),
+(44.55,'Crna',3,3);
+       
+update SVEKAR set Suknja = 'Osijek';
+
+
+select * from SNAŠA;
+
+insert into SNAŠA(kuna,eura,ostavljena)
+	values  
+
+	(29.99, 5,3),	
+	(39.99, 6,2),
+	(49.99, 7, 1);
+        
+select * from PUNICA;
+
+insert into PUNICA(kuna,vesta,Snaša)
+	values  
+	(45.27,'Bijela',3),
+	(27.99,'Žuta', 1),
+	(32.99,'Crvena',2);
+        
+delete from PUNICA where Kratka_majica='AB';
+
+
+select Majica from OSTAVLJENA where lipa not in (9,10,20,30,35);
