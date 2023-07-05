@@ -161,3 +161,18 @@ delete from SESTRA where  Hlače<'AB';
 
 
 select Kratka_majica from ostavljen where introvertno is null;
+
+select a.Narukvica , f.Stil_frizura , e.Gustoća 
+from MLADIĆ a
+inner join ZARUČNIK_MLADIĆ b on a.Šifra      = b.Mladić 
+inner join ZARUČNIK        c on b.Zaručnik   = c.Šifra
+inner join ostavljen       d on c.Šifra      = d.Zaručnik 
+inner join prijateljica    e on d.Šifra      = e.ostavljen
+inner join sestra          f on e.Šifra      = f.prijateljica 
+where d.introvertno is not null and c.asocijalno is not null
+order by e.Gustoća desc;
+
+
+select	a.asocijalno , a.model_naočala 
+from	ZARUČNIK a left join ZARUČNIK_MLADIĆ b on b.Zaručnik = a.Šifra 
+where	b.Zaručnik is null;

@@ -165,3 +165,19 @@ delete from PUNICA where Kratka_majica='AB';
 
 
 select Majica from OSTAVLJENA where lipa not in (9,10,20,30,35);
+
+select a.Ekstrovertno, f.vesta, e.kuna
+from brat a
+inner join prijatelj_brat b on a.Šifra=b.Šifra
+inner join prijatelj c on b.Šifra=c.Šifra
+inner join ostavljena d on d.Šifra=c.šifra
+inner join SNAŠA e on d.Šifra=e.šifra
+inner join punica f on e.Šifra=f.Šifra
+where d.lipa!='91' and c.haljina like '%nt%'
+order by e.kuna desc;
+
+/* 6. Prikažite kolone haljina i lipa iz tablice prijatelj èiji se primarni kljuè 
+ne nalaze u tablici prijatelj_brat. */
+
+select prijatelj.haljina, prijatelj.lipa from prijatelj
+where šifra not in (select šifra from prijatelj_brat);

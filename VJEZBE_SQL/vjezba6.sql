@@ -151,5 +151,19 @@ delete from DEČKO where Model_naočala<'AB';
 
 select Narukvica from BRAT where Treći_puta is null;
 
+select a.Drugi_puta, f.Žena, e.Narukvica
+from OSTAVLJENA a 
+inner join PRIJATELJ_OSTAVLJENA b on a.Šifra=b.Šifra
+inner join PRIJATELJ c on c.Šifra=b.Šifra
+inner join BRAT d on c.Šifra=d.Šifra
+inner join ŽENA e on d.Šifra=e.Šifra
+inner join DEČKO f on e.Šifra=f.Šifra
+where d.Treći_puta is not null and c.prstena='219'
+order by e.narukvica desc;
+
+
+select Prstena, Introvertno from PRIJATELJ
+where Šifra not in (select Šifra from PRIJATELJ_OSTAVLJENA);
+
 
 	

@@ -149,3 +149,17 @@ delete from OSTAVLJENA where Ogrlica =17;
 
 
 select majica from punac where prvi_puta is null;
+
+select a.asocijalno, f.Stil_frizura, e.Naušnica 
+from cura a 
+inner join svekar_cura b on a.Šifra=b.Šifra
+inner join svekar c on c.Šifra=b.Šifra
+inner join punac d on c.Šifra=d.Šifra
+inner join punica e on d.šifra=e.Šifra
+inner join ostavljena f on e.Šifra=f.Šifra
+where d.Prvi_puta is not null and c.majica like '%ba%'
+order by e.Naušnica desc;
+
+
+select svekar.Majica, svekar.Čarape from svekar
+where Šifra not in (select Šifra from SVEKAR_CURA);

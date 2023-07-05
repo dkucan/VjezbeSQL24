@@ -150,4 +150,18 @@ delete from PRIJATELJ where Prstena > 17;
 select * from SNAŠA;
 select HALJINA from SNAŠA where treći_puta is null;
 
+select a.Naušnica, f.jmbag, e.Kratka_majica
+from MLADIĆ a
+inner join ŽENA_MLADIĆ b on a.šifra=b.šifra
+inner join ŽENA c on c.Šifra=b.Šifra
+inner join SNAŠA d on c.Šifra=d.Šifra
+inner join BEĆAR e on d.Šifra=e.Šifra
+inner join PRIJATELJ f on e.Šifra=f.Šifra
+where d.Treći_puta is not null and c.lipa!='29'
+order by e.Kratka_majica desc;
+
+
+select ŽENA.lipa, Žena.prstena from ŽENA
+where Šifra not in (select ŠIFRA from ŽENA_MLADIĆ);
+
 
