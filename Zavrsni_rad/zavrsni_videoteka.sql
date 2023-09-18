@@ -48,7 +48,7 @@ Create table POSUDBA (
 	Insert into CLAN (Ime, Prezime, Adresa, Mobitel, OIB, Datum_uclanjenja) values ('Katarina', 'Peric', 'Periceva_12', '09923456789', '20751953568', '2022-04-16');
 	Insert into CLAN (Ime, Prezime, Adresa, Mobitel, OIB, Datum_uclanjenja) values ('Ana', 'Markovic', 'Markoviceva_35', '09712345678', '20751953568', '2022-11-17');
 
-	Insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('xXx', '1999', 'Akcijski', '7', '3');
-	insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('Armageddon', '1998', 'Akcijski', '8', '5');
-	Insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('Godfather', '1972', 'Triler', '10', '5');
-	insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('Godfather_2', '1974', 'Triler', '10', '5');
+	Insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('xXx', '1999', 'Akcijski', 7, 3);
+	insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('Armageddon', '1998', 'Akcijski', 8, 5);
+	Insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('Godfather', '1972', 'Triler', 10, 5);
+	insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('Godfather_2', '1974', 'Triler', 10, 5);
