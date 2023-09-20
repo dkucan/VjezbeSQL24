@@ -52,3 +52,6 @@ Create table POSUDBA (
 	insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('Armageddon', '1998', 'Akcijski', 8, 5);
 	Insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('Godfather', '1972', 'Triler', 10, 5);
 	insert into KAZETA (Naslov, Godina_izdanja, Zanr, Cijena_posudbe, Cijena_zakasnine) values ('Godfather_2', '1974', 'Triler', 10, 5);
+
+	insert into POSUDBA (Datum_posudbe, Datum_vracanja, Zakasnina, Clan) values ('2023-09-20', '2023-09-23', 3, 1);
+	insert into POSUDBA (Datum_posudbe, Datum_vracanja, Zakasnina, Clan) values ('2023-09-20', '2023-09-25', 5, 2);
