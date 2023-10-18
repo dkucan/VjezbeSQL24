@@ -17,7 +17,7 @@ create table CLAN (
 create table KAZETA (
 	Sifra int not null primary key identity(1,1),
 	Naslov varchar(50) not null,
-	Godina_izdanja date not null,
+	Godina_izdanja int not null,
 	Zanr varchar(30) not null,
 	Cijena_posudbe int not null,
 	Cijena_zakasnine int not null
