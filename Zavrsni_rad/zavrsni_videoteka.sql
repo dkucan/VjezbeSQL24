@@ -1,9 +1,19 @@
-use master;
+﻿use master;
 drop database if exists videoteka;
 go
 create database videoteka collate Croatian_CI_AS;
 go
 use videoteka;
+
+create table operater(
+sifra int not null primary key identity(1,1),
+email varchar(50) not null,
+lozinka varchar(200) not null
+);
+
+-- Lozinka videoteka generirana pomoću https://bcrypt-generator.com/
+insert into operater values ('dkucan61@gmail.com',
+'$2a$12$z2iDhIbVSwnXKw2hja7CrOtfloGXk1G1bM4lW6fAEj4Hw.Czv2kpq');
 
 create table CLAN (
 	Sifra int not null primary key identity(1,1),
