@@ -715,6 +715,22 @@ From INFORMATION_SCHEMA.COLUMNS
 where DATA_TYPE		in ('text', 'ntext', 'image');
 
 
+SELECT * FROM Vlasnik
+where CAST (Adresa as varchar(max)) = 'Osijek';
+
+Insert into Vlasnik (VlasnikID, Ime,Prezime, Adresa)
+VALUES (101, 'Pero', 'Perić', 'Perićeva 3, 31000, Osijek')
+
+INSERT INTO Pas (PasID, Ime, Starost, DatumUdomljenja, DatumCijepljenja, ZdravstvenoStanje, Spol, Pasmina, BojaDlake,FotografijaURL, Karakter, VlasnikID)
+VALUES (502, 'Džeki', 10, '2022-05-26', '2025-05-26', 'Zdrav', 'M', 'mješanac', 'crno-smeđi', 'https://example.com/images/pas_501.jpg', 'nježni div', 101);
+
+UPDATE Vlasnik	
+SET Adresa = 'Osijek'
+where VlasnikID = 93;
+
+DELETE FROM Pas WHERE PasID = 102;
+      
+
 
 
 
