@@ -729,8 +729,56 @@ SET Adresa = 'Osijek'
 where VlasnikID = 93;
 
 DELETE FROM Pas WHERE PasID = 102;
-      
 
+Select 
+
+Table_schema,
+Table_Name,
+Column_Name,
+Data_Type
+from INFORMATION_SCHEMA.COLUMNS
+where DATA_TYPE = 'text';
+
+GO
+
+alter table Vlasnik
+alter column Adresa Varchar(MAX);
+
+
+Go
+alter table Pas
+alter column FotografijaURL varchar(max);
+
+GO
+
+alter table Pas
+Alter column Karakter varchar(Max);
+
+GO
+
+SELECT 
+
+TABLE_SCHEMA,
+TABLE_NAME,
+COLUMN_NAME,
+DATA_TYPE
+
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE DATA_TYPE = 'text'
+ORDER BY TABLE_NAME, COLUMN_NAME;
+
+      
+	  SELECT 
+    s.name AS Schema_Name,
+    t.name AS Table_Name,
+    c.name AS Column_Name,
+    ty.name AS Data_Type
+FROM sys.columns c
+JOIN sys.types ty ON c.user_type_id = ty.user_type_id
+JOIN sys.tables t ON c.object_id = t.object_id
+JOIN sys.schemas s ON t.schema_id = s.schema_id
+WHERE ty.name IN ('text', 'ntext', 'image')
+ORDER BY Table_Name, Column_Name;
 
 
 
