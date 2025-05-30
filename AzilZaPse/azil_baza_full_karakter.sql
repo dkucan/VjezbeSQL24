@@ -784,6 +784,9 @@ where Adresa = 'Hvar'
 select top (30) * from Udomljenje
 where DatumUdomljenja < 2023-05-10
 
+SELECT Ime, Starost, Spol, Karakter, ZdravstvenoStanje from AzilOsijek55.dbo.Pas
+join dbo.Vlasnik on dbo.Udomljenje.DatumUdomljenja = dbo.Vlasnik.VlasnikID;
+
 
 
 
