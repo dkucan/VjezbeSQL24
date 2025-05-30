@@ -45,7 +45,7 @@ CREATE TABLE Udomljenje (
     UdomljenjeID INT PRIMARY KEY IDENTITY(1,1),
     PasID INT NOT NULL,
     VlasnikID INT NOT NULL,
-    DatumUdomljenja DATE NOT NULL,
+    DatumUdomljenja DATETIME NOT NULL,
     FOREIGN KEY (PasID) REFERENCES Pas(PasID),
     FOREIGN KEY (VlasnikID) REFERENCES Vlasnik(VlasnikID)
 );
@@ -769,6 +769,20 @@ ORDER BY Table_Name, Column_Name;
 
 alter table Pas
 Add constraint chk_starost check (Starost >= 0);
+
+select Ime, Prezime, Adresa from AzilOsijek55.dbo.Vlasnik
+
+select Ime, spol, starost, DatumCijepljenja, ZdravstvenoStanje from AzilOsijek55.dbo.Pas
+
+Select * from AzilOsijek55.dbo.Pas
+
+Select top (3) * from AzilOsijek55.dbo.Vlasnik
+
+select * from AzilOsijek55.dbo.vlasnik
+where Adresa = 'Hvar'
+
+select top (30) * from Udomljenje
+where DatumUdomljenja < 2023-05-10
 
 
 
