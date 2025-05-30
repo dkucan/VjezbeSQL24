@@ -1,7 +1,11 @@
-IF not EXISTS (SELECT * FROM sys.databases WHERE name = 'AzilOsijek55')
-BEGIN
+USE master;
+GO
+
+DROP DATABASE IF EXISTS AzilOsijek55;
+
+GO
+
     CREATE DATABASE AzilOsijek55;
-END
 GO
 
 USE AzilOsijek55;
@@ -18,7 +22,7 @@ CREATE TABLE Vlasnik (
   VlasnikID INT PRIMARY KEY,
   Ime VARCHAR(50),
   Prezime VARCHAR(50),
-  Adresa TEXT
+  Adresa VARCHAR(MAX)
 );
 
 CREATE TABLE Pas (
@@ -31,8 +35,8 @@ CREATE TABLE Pas (
   Spol CHAR(1),
   Pasmina VARCHAR(50),
   BojaDlake VARCHAR(50),
-  FotografijaURL TEXT,
-  Karakter TEXT,
+  FotografijaURL VARCHAR(MAX),
+  Karakter VARCHAR(MAX),
   VlasnikID INT,
   FOREIGN KEY (VlasnikID) REFERENCES Vlasnik(VlasnikID)
 );
@@ -738,23 +742,6 @@ Column_Name,
 Data_Type
 from INFORMATION_SCHEMA.COLUMNS
 where DATA_TYPE = 'text';
-
-GO
-
-alter table Vlasnik
-alter column Adresa Varchar(MAX);
-
-
-Go
-alter table Pas
-alter column FotografijaURL varchar(max);
-
-GO
-
-alter table Pas
-Alter column Karakter varchar(Max);
-
-GO
 
 SELECT 
 
