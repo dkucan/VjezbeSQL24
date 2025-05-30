@@ -767,6 +767,10 @@ JOIN sys.schemas s ON t.schema_id = s.schema_id
 WHERE ty.name IN ('text', 'ntext', 'image')
 ORDER BY Table_Name, Column_Name;
 
+alter table Pas
+Add constraint chk_starost check (Starost >= 0);
+
+
 
 
 
