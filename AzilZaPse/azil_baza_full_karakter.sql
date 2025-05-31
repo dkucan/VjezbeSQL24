@@ -1,3 +1,15 @@
+-- dropanje i kreiranje baze. U prethodnoj verziji je bilo
+-- if not exists (select * from sys.databases where name = 'AzilOsijek55')
+-- begin
+-- create database AzilOsijek55;
+-- End
+--Go
+-- Use AzilOsijek55;
+-- Go
+-- što je značilo da sistem prvo provjerava da li postoji baza AzilOsijek55 te ukoliko ne postoji da onda počinje sa kreiranjem i nakon toga korištenjem baze
+-- Prešlo se na dropanje baze ukoliko postoji kako bi se kreirala iz početka iz razloga jer je bilo poteškoća sa konverzijom text u varchar i nvarchar u pojedinim stupcima pa
+-- se barem dok se učim s tim prešlo na jednostavnije rješenje, poznato s predavanja
+
 USE master;
 GO
 
@@ -12,10 +24,10 @@ USE AzilOsijek55;
 GO
 
 -- Sigurno brisanje postojećih tablica ako ih ima
-IF OBJECT_ID('Udomljenje', 'U') IS NOT NULL DROP TABLE Udomljenje;
-IF OBJECT_ID('Pas', 'U') IS NOT NULL DROP TABLE Pas;
-IF OBJECT_ID('Vlasnik', 'U') IS NOT NULL DROP TABLE Vlasnik;
-GO
+--IF OBJECT_ID('Udomljenje', 'U') IS NOT NULL DROP TABLE Udomljenje;
+--IF OBJECT_ID('Pas', 'U') IS NOT NULL DROP TABLE Pas;
+--IF OBJECT_ID('Vlasnik', 'U') IS NOT NULL DROP TABLE Vlasnik;
+-- GO
 
 -- Kreiranje tablica ispočetka
 CREATE TABLE Vlasnik (
@@ -49,7 +61,7 @@ CREATE TABLE Udomljenje (
     FOREIGN KEY (PasID) REFERENCES Pas(PasID),
     FOREIGN KEY (VlasnikID) REFERENCES Vlasnik(VlasnikID)
 );
-
+-- UNOS PODATAKA U TABLICU VLASNIK
 INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (1, 'Jasminka', 'Akmačić', 'Palmotićeva 076, 34071 Rijeka');
 INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (2, 'Anđa', 'Horvatek', 'Skalinska 6a, 94487 Pregrada');
 INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (3, 'Anđa', 'Crnković', 'Arnoldova 7a, 79801 Hvar');
@@ -150,6 +162,8 @@ INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (97, 'Josipa', 'Ad�
 INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (98, 'Marta', 'Juretić', 'Jadranska 5a, 73068 Sisak');
 INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (99, 'Ante', 'Zrilić', 'Kožarska 8a/5, 04683 Korčula');
 INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (100, 'Marta', 'Maržić', 'Zamenhofova 4, 71735 Varaždinske Toplice');
+
+-- UNOS PODATAKA U TABLICU PAS
 
 INSERT INTO Pas (PasID, Ime, Starost, DatumUdomljenja, DatumCijepljenja, ZdravstvenoStanje, Spol, Pasmina, BojaDlake, FotografijaURL, Karakter, VlasnikID) VALUES (1, 'Nera', 8, '2025-04-17', '2026-01-22', 'Stariji pas', 'Ž', 'Maltezer', 'crna', 'https://example.com/images/pas_1.jpg', 'Dobro se slaže s drugim životinjama.', 74);
 INSERT INTO Pas (PasID, Ime, Starost, DatumUdomljenja, DatumCijepljenja, ZdravstvenoStanje, Spol, Pasmina, BojaDlake, FotografijaURL, Karakter, VlasnikID) VALUES (2, 'Medo', 14, '2024-10-28', '2025-06-09', 'Stariji pas', 'M', 'Maltezer', 'crna', 'https://example.com/images/pas_2.jpg', 'Smiren, ali zna biti tvrdoglav kad želi nešto po svom.', 37);
@@ -654,43 +668,61 @@ INSERT INTO Pas (PasID, Ime, Starost, DatumUdomljenja, DatumCijepljenja, Zdravst
 
 
 
-
+--DOPUNA PODATAKA U TABLICU PAS
 Insert into Pas (PasID, Ime, Starost, DatumUdomljenja, DatumCijepljenja, ZdravstvenoStanje, Spol, Pasmina, BojaDlake,FotografijaURL, Karakter, VlasnikID)
 values      (501, 'Luna', 1, '2025-05-26', '2025-05-26', 'Zdrava', 'Ž', 'mješanka', 'siva', 'https://example.com/images/pas_501.jpg', 'mala,razigrana curica', 100);
 
 
-
+-- UPDATEIRANJE PODATAKA U TABLICI PAS
 UPDATE PAS
 SET Ime = 'Rex'
 where PasID = 501;
 
-
+-- PRIKAZ PODATAKA IZ TABLICE PAS
 select * from Pas;
 
+
+-- BRISANJE PODATKA IZ TABLICE PAS
 DELETE FROM Pas
 WHERE Ime = 'Maks332';
 
+-- Povezivanje tablica PAS, Udomljenje i Vlasnik te dohvaćanje traženih podataka, u ovom slučaju ime psa, ime i prezime vlasnika te datum udomljenja
+Select 
 
-Select p.Ime As ImePsa, v.Ime as ImeVlasnika, v.Prezime
+p.Ime As ImePsa, 
+v.Ime as ImeVlasnika, 
+v.Prezime,
+u.DatumUdomljenja
+
 from Pas p
 Join Udomljenje u On p.PasID = u.PasID
 Join Vlasnik v ON v.VlasnikID = u.VlasnikID;
 
+
+-- Dohvat prvih 5 redaka iz tablice Udomljenje, bez sortiranja
 Select Top 5 * from Udomljenje;
+
+-- Dohvat datuma udomljenja za svakog udomljenog psa
 
 SELECT p.Ime, u.DatumUdomljenja
 from Pas p
 Join Udomljenje u ON p.PasID=u.PasID;
 
+-- Dohvat imena i prezimena Skrbnika odnosno vlasnika psa
 Select p.Ime, v.Ime + '' + v.Prezime AS Vlasnik
 from Pas p
 Join Udomljenje u ON p.PasID = u.PasID
 Join Vlasnik v ON u.VlasnikID = v.VlasnikID;
 
+
+-- Dohvat udomljenih pasa nakon 10. srpnja 2023. godine
 Select p.Ime, u.DatumUdomljenja
 from Pas p
 Join Udomljenje u ON p.PasID = u.PasID
 where u.DatumUdomljenja > '2023-07-10';
+
+-- Podaci o vlasnicima udomljenih pasa iz Jastrebarskog
+-- Ako adresa nije varchar nego text (kako je bilo), zato se koristi CAST
 
 Select v.Ime + '' + v.Prezime AS Vlasnik, v.Adresa, p.Ime
 from Vlasnik v
@@ -698,6 +730,8 @@ Join Udomljenje u ON v.VlasnikID = u.VlasnikID
 Join Pas p ON u.PasID = p.PasID
 where CAST(v.Adresa as VARCHAR(255))= 'Jastrebarsko';
 
+
+-- PROVJERA DA LI POSTOJE TEXT COLUMNS
 SELECT 
 
 TABLE_SCHEMA,
@@ -718,16 +752,22 @@ Data_type
 From INFORMATION_SCHEMA.COLUMNS
 where DATA_TYPE		in ('text', 'ntext', 'image');
 
-
+-- DOHVAT SVIH VLASNIKA PASAIZ OSIJEKA
 SELECT * FROM Vlasnik
 where CAST (Adresa as varchar(max)) = 'Osijek';
 
+
+-- UNOS NOVOG VLASNIKA U BAZU
 Insert into Vlasnik (VlasnikID, Ime,Prezime, Adresa)
 VALUES (101, 'Pero', 'Perić', 'Perićeva 3, 31000, Osijek')
+
+-- UNOS NOVOG PSA U BAZU
 
 INSERT INTO Pas (PasID, Ime, Starost, DatumUdomljenja, DatumCijepljenja, ZdravstvenoStanje, Spol, Pasmina, BojaDlake,FotografijaURL, Karakter, VlasnikID)
 VALUES (502, 'Džeki', 10, '2022-05-26', '2025-05-26', 'Zdrav', 'M', 'mješanac', 'crno-smeđi', 'https://example.com/images/pas_501.jpg', 'nježni div', 101);
 
+
+-- UPDATE ADRESE VLASNIKA 93 U BAZU
 UPDATE Vlasnik	
 SET Adresa = 'Osijek'
 where VlasnikID = 93;
@@ -784,8 +824,23 @@ where Adresa = 'Hvar'
 select top (30) * from Udomljenje
 where DatumUdomljenja < 2023-05-10
 
-SELECT Ime, Starost, Spol, Karakter, ZdravstvenoStanje from AzilOsijek55.dbo.Pas
-join dbo.Vlasnik on dbo.Udomljenje.DatumUdomljenja = dbo.Vlasnik.VlasnikID;
+--SELECT Ime, Starost, Spol, Karakter, ZdravstvenoStanje from AzilOsijek55.dbo.Pas
+-- dbo.Vlasnik on dbo.Udomljenje.DatumUdomljenja = dbo.Vlasnik.VlasnikID;
+
+
+SELECT 
+    p.Ime AS ImePsa,
+    p.Starost,
+    p.Spol,
+    p.Karakter,
+    p.ZdravstvenoStanje,
+    u.DatumUdomljenja,
+    v.Ime AS ImeVlasnika,
+    v.Prezime
+FROM dbo.Pas p
+JOIN dbo.Udomljenje u ON p.PasID = u.PasID
+JOIN dbo.Vlasnik v ON u.VlasnikID = v.VlasnikID;
+
 
 
 
