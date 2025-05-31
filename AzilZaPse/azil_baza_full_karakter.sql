@@ -34,7 +34,7 @@ CREATE TABLE Vlasnik (
   VlasnikID INT PRIMARY KEY,
   Ime VARCHAR(50),
   Prezime VARCHAR(50),
-  Adresa VARCHAR(MAX)
+  Adresa VARCHAR(255)
 );
 
 CREATE TABLE Pas (
@@ -47,8 +47,8 @@ CREATE TABLE Pas (
   Spol CHAR(1),
   Pasmina VARCHAR(50),
   BojaDlake VARCHAR(50),
-  FotografijaURL VARCHAR(MAX),
-  Karakter VARCHAR(MAX),
+  FotografijaURL VARCHAR(255),
+  Karakter VARCHAR(255),
   VlasnikID INT,
   FOREIGN KEY (VlasnikID) REFERENCES Vlasnik(VlasnikID)
 );
