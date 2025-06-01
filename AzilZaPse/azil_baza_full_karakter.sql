@@ -880,6 +880,10 @@ SELECT * FROM
 Udomljenje
 WHERE DatumUdomljenja > '2020-10-06' AND VlasnikID = 97;
 
+-- dohvat vlasnika prema adresi - radi ali nešto ne štima
+SELECT * FROM Vlasnik
+WHERE Adresa not in ('Varaždin', 'Rijeka', 'Karlovac', 'Pula', 'Beli Manastir', 'Dugo Selo', 'Đakovo', 'Pregrada', 'Knin')
+
 
 
 
