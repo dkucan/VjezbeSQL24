@@ -34,6 +34,7 @@ CREATE TABLE Vlasnik (
   VlasnikID INT PRIMARY KEY,
   Ime VARCHAR(50),
   Prezime VARCHAR(50),
+  Grad VARCHAR (255),
   Adresa VARCHAR(255)
 );
 
@@ -61,107 +62,108 @@ CREATE TABLE Udomljenje (
     FOREIGN KEY (PasID) REFERENCES Pas(PasID),
     FOREIGN KEY (VlasnikID) REFERENCES Vlasnik(VlasnikID)
 );
--- UNOS PODATAKA U TABLICU VLASNIK
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (1, 'Jasminka', 'Akmačić', 'Palmotićeva 076, 34071 Rijeka');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (2, 'Anđa', 'Horvatek', 'Skalinska 6a, 94487 Pregrada');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (3, 'Anđa', 'Crnković', 'Arnoldova 7a, 79801 Hvar');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (4, 'Jure', 'Ozimec', 'Ksaverska 793, 94132 Senj');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (5, 'Branko', 'Rendulić', 'Dolac 9c/7, 04614 Trogir');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (6, 'Albina', 'Grgić', 'Klanac Grgura Tepečića 955, 56623 Kraljevica');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (7, 'Snježana', 'Drandić', 'Javorovac 8c/4, 59247 Gospić');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (8, 'Mira', 'Radović', 'Vlaška 9c/6, 34055 Novska');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (9, 'Tomislav', 'Čukman', 'Gornje Prekrižje 1c/0, 27210 Čakovec');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (10, 'Duje', 'Cvitan', 'Višnjica 6a, 80425 Zlatar');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (11, 'Pavao', 'Škunca', 'Krležin gvozd 9, 72268 Virovitica');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (12, 'Mateja', 'Kopjar', 'Kožarska 5c, 51291 Makarska');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (13, 'Barica', 'Štefanec', 'Šilobodov put 7a/0, 98183 Knin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (14, 'Marin', 'Stolnik', 'Jabukovac 6b/1, 81569 Metković');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (15, 'Joso', 'Klarić', 'Magdićeve 9b/1, 03307 Senj');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (16, 'Petra', 'Abičić', 'Nova Ves 90, 41872 Ogulin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (17, 'Romano', 'Jozić', 'Nova Ves 8, 97676 Požega');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (18, 'Suzana', 'Tuđa', 'Svibovac 726, 86089 Komiža');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (19, 'Patrik', 'Ercegović', 'Šumski prečac 4b/3, 16369 Petrinja');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (20, 'Kata', 'Kovačić', 'Jurišićeva 9, 52415 Varaždin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (21, 'Zora', 'Solomun', 'Ksaver 2a/1, 30648 Donji Miholjac');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (22, 'Milena', 'Miličić', 'Šestinski vijenac 0b, 95673 Obrovac');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (23, 'Goran', 'Jasprica', 'Ksaver 8, 05562 Zlatar');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (24, 'Snježana', 'Pavković', 'Višnjičke 2, 46515 Kutina');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (25, 'Ema', 'Vukobratović', 'Pantovčak 1c, 24689 Rab');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (26, 'Alen', 'Roce', 'Male 4b, 67592 Križevci');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (27, 'Danijel', 'Dončević', 'Novi Goljak 3a/3, 24303 Zlatar');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (28, 'Vera', 'Obratov', 'Nova Ves 585, 60459 Garešnica');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (29, 'Milica', 'Tomljanović', 'Lisinskoga 7, 64783 Omiš');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (30, 'Toni', 'Blažević', 'Novi Goljak 26, 48584 Nin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (31, 'Jasna', 'Milas', 'Mašekova 1b, 74466 Karlovac');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (32, 'Andrija', 'Vidaković', 'Rockefellerova 1b, 01246 Novigrad');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (33, 'Barbara', 'Jelavić', 'Donje Prekrižje 4, 11626 Petrinja');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (34, 'Danijel', 'Sinožić', 'Rokov perivoj 6a/0, 66533 Vrbovec');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (35, 'Ivana', 'Šipić', 'Nemetova 5c/4, 45846 Omiš');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (36, 'Đurđica', 'Pavlović', 'Gračanska 8b, 19705 Đakovo');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (37, 'Saša', 'Mikulec', 'Šestinski vijenac 33, 62992 Opatija');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (38, 'Hrvoje', 'Derežić', 'Šalata 5c, 15624 Ivanec');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (39, 'Željka', 'Bradić', 'Kapucinske 0c, 32921 Dugo Selo');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (40, 'Marija', 'Živić', 'Pod zidom 640, 88785 Kaštela');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (41, 'Dino', 'Ilijić', 'Rockefellerova 9c, 50849 Varaždin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (42, 'Petar', 'Borojević', 'Cmrok 2a/0, 02104 Čazma');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (43, 'Mladen', 'Vitasović', 'Jurišićeva 386, 49719 Velika Gorica');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (44, 'Kristijan', 'Pavković', 'Dolac 5c/0, 80210 Stari Grad');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (45, 'Martina', 'Legović', 'Rikardove 8b/5, 39474 Grubišno Polje');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (46, 'Laura', 'Baničević', 'Šalata 3, 33145 Velika Gorica');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (47, 'Nika', 'Toić', 'Gupčeva zvijezda 514, 99843 Solin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (48, 'Elizabeta', 'Turčinov', 'Gupčeva zvijezda 0a, 26975 Osijek');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (49, 'Franjo', 'Andrašek', 'Zamenhofove 0c/0, 35151 Skradin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (50, 'Jure', 'Oršulić', 'Podgaj 1c, 72828 Solin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (51, 'Petra', 'Jakovljević', 'Mihaljevac 4b, 48145 Valpovo');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (52, 'Davor', 'Kirinčić', 'Šestinski vrh 7a, 32986 Virovitica');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (53, 'Lidija', 'Bijelić', 'Golubovac 7a, 10916 Virovitica');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (54, 'Janko', 'Milovac', 'Svibovac 8a, 49617 Cres');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (55, 'Marija', 'Mudronja', 'Rockefellerova 5c/8, 83008 Mali Lošinj');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (56, 'Snježana', 'Martinčević', 'Bosanska 6a, 23313 Sinj');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (57, 'Slavko', 'Barac', 'Zmajevac 8c, 61722 Zagreb');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (58, 'Rudolf', 'Tuškan', 'Dubravkin 6c, 88381 Oroslavje');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (59, 'Tomislav', 'Varga', 'Medvedgradska 5a/9, 83624 Kaštela');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (60, 'Valentina', 'Babić', 'Nemetova 9b, 97183 Trilj');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (61, 'Erik', 'Bertoša', 'Draškovićeva 0, 61749 Slunj');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (62, 'Đuro', 'Bukvić', 'Ksaverska 6b, 86335 Bakar');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (63, 'Mijo', 'Hećimović', 'Arnoldova 1b/1, 88551 Glina');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (64, 'Anica', 'Bučanac', 'Gradec 635, 40853 Varaždin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (65, 'Mateja', 'Milovac', 'Kamaufova 7a/7, 86405 Dugo Selo');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (66, 'David', 'Oršulić', 'Svibovac 1b, 08728 Hrvatska Kostajnica');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (67, 'Zdenka', 'Sardelić', 'Mirogojska 7a/6, 59487 Novi Marof');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (68, 'Leon', 'Adžijević', 'Dolac 09, 57706 Senj');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (69, 'Mihael', 'Colić', 'Mala 1b/5, 61278 Glina');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (70, 'Božica', 'Cindrić', 'Šumski prečac 53, 08727 Garešnica');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (71, 'Gordana', 'Kuveždić', 'Tkalčićeva 5b/2, 99933 Lepoglava');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (72, 'Milena', 'Barić', 'Klenovac 547, 56868 Pag');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (73, 'Pavao', 'Sršen', 'Zvonarnička 3c/4, 68742 Donji Miholjac');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (74, 'Toni', 'Duvančić', 'Goljačke 853, 71216 Donji Miholjac');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (75, 'Marko', 'Božanić', 'Ksaverska 3a/9, 26971 Knin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (76, 'Božica', 'Ribić', 'Ksaverska 3c, 38794 Imotski');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (77, 'Božena', 'Šimara', 'Kapucinske 304, 77476 Novalja');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (78, 'Romano', 'Kovačević', 'Mihaljevac 7c/7, 05726 Čakovec');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (79, 'Slavko', 'Škara', 'Ljubinkovac 473, 39296 Dugo Selo');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (80, 'Anđa', 'Butković', 'Mlinarska 6a/1, 50463 Čakovec');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (81, 'Matej', 'Županić', 'Zamenhofove 0b/8, 52328 Jastrebarsko');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (82, 'Katica', 'Kokorić', 'Rockefellerova 549, 25753 Novalja');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (83, 'Dragan', 'Božičković', 'Jurkovićeva 90, 95687 Knin');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (84, 'Nikša', 'Rumora', 'Vlaška 322, 12912 Čabar');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (85, 'Milka', 'Hadžić', 'Mihaljevac 46, 48975 Sveti Ivan Zelina');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (86, 'Saša', 'Šelendić', 'Skalinska 2, 75190 Klanjec');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (87, 'Ivana', 'Šeparović', 'Mala 1, 03678 Stari Grad');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (88, 'Karla', 'Pokos', 'Streljačka 3c/3, 75248 Jastrebarsko');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (89, 'Nada', 'Vučetić', 'Kraljevec 5c/5, 33493 Orahovica');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (90, 'Sara', 'Jurić', 'Pantovčak 331, 34937 Križevci');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (91, 'Željka', 'Tuksar', 'Jagodnjak 4b/4, 82943 Pakrac');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (92, 'Aldo', 'Bojanić', 'Mirogojska 9b, 42227 Omiš');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (93, 'Mile', 'Franić', 'Bučarova 8, 31109 Opatija');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (94, 'Pavao', 'Tešija', 'Zelenjak 9, 59651 Novi Vinodolski');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (95, 'Ružica', 'Bičanić', 'Gračanska 14, 75334 Buzet');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (96, 'Jele', 'Kupsjak', 'Gornje Prekrižje 3a/4, 32460 Pula');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (97, 'Josipa', 'Adžijević', 'Mletačka 5b/1, 69925 Klanjec');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (98, 'Marta', 'Juretić', 'Jadranska 5a, 73068 Sisak');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (99, 'Ante', 'Zrilić', 'Kožarska 8a/5, 04683 Korčula');
-INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Adresa) VALUES (100, 'Marta', 'Maržić', 'Zamenhofova 4, 71735 Varaždinske Toplice');
+-- UNOS PODATAKA U TABLICU 
+-- DOPUNA I RUČNI UNOS U STUPAC GRAD ZBOG TOGA ŠTO JE DAVAO NEPRECIZNE PODATKE ODNOSNO I ŠTO TREBA I ŠTO NE TREBA IZ TABLICE ADRESA
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (1, 'Jasminka', 'Akmačić', 'Rijeka','Palmotićeva 076');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (2, 'Anđa', 'Horvatek', 'Pregrada', 'Skalinska 6a');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (3, 'Anđa', 'Crnković', 'Hvar', 'Arnoldova 7a');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (4, 'Jure', 'Ozimec', 'Senj', 'Ksaverska 793');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (5, 'Branko', 'Rendulić', 'Trogir', 'Dolac 9c/7');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (6, 'Albina', 'Grgić', 'Kraljevica', 'Klanac Grgura Tepečića 955');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (7, 'Snježana', 'Drandić', 'Gospić', 'Javorovac 8c/4');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (8, 'Mira', 'Radović', 'Novska', 'Vlaška 9c/6');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (9, 'Tomislav', 'Čukman', 'Čakovec', 'Gornje Prekrižje 1c/0');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (10, 'Duje', 'Cvitan', 'Zlatar', 'Višnjica 6a');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (11, 'Pavao', 'Škunca', 'Virovitica', 'Krležin gvozd 9');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (12, 'Mateja', 'Kopjar', 'Makarska', 'Kožarska 5c');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (13, 'Barica', 'Štefanec', 'Knin', 'Šilobodov put 7a/0');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (14, 'Marin', 'Stolnik', 'Metković', 'Jabukovac 6/B');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (15, 'Joso', 'Klarić', 'Senj', 'Magdićeve 9b/1');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (16, 'Petra', 'Abičić', 'Ogulin', 'Nova Ves 90');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (17, 'Romano', 'Jozić', 'Požega', 'Nova Ves 8');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (18, 'Suzana', 'Tuđa', 'Komiža', 'Svibovac 726');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (19, 'Patrik', 'Ercegović', 'Petrinja', 'Šumski prečac 4b/3');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (20, 'Kata', 'Kovačić', 'Varaždin', 'Jurišićeva 9');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (21, 'Zora', 'Solomun', 'Donji Miholjac', 'Ksaver 2a/1');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (22, 'Milena', 'Miličić', ' Obrovac', 'Šestinski vijenac 0b');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (23, 'Goran', 'Jasprica', 'Zlatar', 'Ksaver 8');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (24, 'Snježana', 'Pavković', 'Kutina', 'Višnjičke 2');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (25, 'Ema', 'Vukobratović', 'Rab', 'Pantovčak 1c');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (26, 'Alen', 'Roce', 'Križevci', 'Male 4b');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (27, 'Danijel', 'Dončević', 'Zlatar', 'Novi Goljak 3a/3');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (28, 'Vera', 'Obratov', 'Garešnica', 'Nova Ves 585');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (29, 'Milica', 'Tomljanović', 'Omiš', 'Lisinskoga 7');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (30, 'Toni', 'Blažević', 'Nin', 'Novi Goljak 26');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (31, 'Jasna', 'Milas', 'Karlovac', 'Mašekova 1b');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (32, 'Andrija', 'Vidaković', 'Novigrad', 'Rockefellerova 1b');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (33, 'Barbara', 'Jelavić', 'Petrinja', 'Donje Prekrižje 4');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (34, 'Danijel', 'Sinožić', 'Vrbovec', 'Rokov perivoj 6a/0');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (35, 'Ivana', 'Šipić', 'Omiš', 'Nemetova 5c/4');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (36, 'Đurđica', 'Pavlović', 'Đakovo', 'Gračanska 8b');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (37, 'Saša', 'Mikulec', 'Opatija', 'Šestinski vijenac 33');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (38, 'Hrvoje', 'Derežić', 'Ivanec', 'Šalata 5c');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (39, 'Željka', 'Bradić', 'Dugo Selo', 'Kapucinske 1c');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (40, 'Marija', 'Živić', 'Kaštela', 'Pod zidom 640');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (41, 'Dino', 'Ilijić', 'Varaždin', 'Rockefellerova 9c');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (42, 'Petar', 'Borojević', 'Čazma', 'Cmrok 2a/0');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (43, 'Mladen', 'Vitasović', 'Velika Gorica', 'Jurišićeva 386');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (44, 'Kristijan', 'Pavković', 'Stari Grad', 'Dolac 5c/0');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (45, 'Martina', 'Legović', 'Grubišno Polje', 'Rikardove 8b/5');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (46, 'Laura', 'Baničević', 'Velika Gorica', 'Šalata 3');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (47, 'Nika', 'Toić', 'Solin', 'Gupčeva zvijezda 514');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (48, 'Elizabeta', 'Turčinov', 'Osijek', 'Gupčeva zvijezda 1a');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (49, 'Franjo', 'Andrašek', 'Skradin', 'Zamenhofove 1c/1');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (50, 'Jure', 'Oršulić', 'Solin', 'Podgaj 1c');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (51, 'Petra', 'Jakovljević', 'Valpovo', 'Mihaljevac 4b');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (52, 'Davor', 'Kirinčić', 'Virovitica', 'Šestinski vrh 7a');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (53, 'Lidija', 'Bijelić', 'Virovitica', 'Golubovac 7a');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (54, 'Janko', 'Milovac', 'Cres', 'Svibovac 8a');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (55, 'Marija', 'Mudronja', 'Mali Lošinj', 'Rockefellerova 5c/8');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (56, 'Snježana', 'Martinčević', 'Sinj', 'Bosanska 6a');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (57, 'Slavko', 'Barac', 'Zagreb', 'Zmajevac 8c');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (58, 'Rudolf', 'Tuškan', 'Oroslavje', 'Dubravkin 6c');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (59, 'Tomislav', 'Varga', 'Kaštela', 'Medvedgradska 5a/9');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (60, 'Valentina', 'Babić', 'Trilj', 'Nemetova 9b');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (61, 'Erik', 'Bertoša', 'Slunj', 'Draškovićeva 0');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (62, 'Đuro', 'Bukvić', 'Bakar', 'Ksaverska 6b');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (63, 'Mijo', 'Hećimović', 'Glina', 'Arnoldova 1b/1');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (64, 'Anica', 'Bučanac', 'Varaždin', 'Gradec 635');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (65, 'Mateja', 'Milovac', 'Dugo Selo', 'Kamaufova 7a/7');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (66, 'David', 'Oršulić', 'Hrvatska Kostajnica', 'Svibovac 1b');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (67, 'Zdenka', 'Sardelić', 'Novi Marof', 'Mirogojska 7a/6');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (68, 'Leon', 'Adžijević', 'Senj', 'Dolac 09');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (69, 'Mihael', 'Colić', 'Glina', 'Mala 1b/5');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (70, 'Božica', 'Cindrić', 'Garešnica', 'Šumski prečac 53');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (71, 'Gordana', 'Kuveždić', 'Lepoglava', 'Tkalčićeva 5b/2');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (72, 'Milena', 'Barić', 'Pag', 'Klenovac 547');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (73, 'Pavao', 'Sršen', 'Donji Miholjac', 'Zvonarnička 3c/4');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (74, 'Toni', 'Duvančić', 'Donji Miholjac', 'Goljačke 853');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (75, 'Marko', 'Božanić', 'Knin', 'Ksaverska 3a/9');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (76, 'Božica', 'Ribić', 'Imotski', 'Ksaverska 3c');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (77, 'Božena', 'Šimara', 'Novalja', 'Kapucinske 304');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (78, 'Romano', 'Kovačević', 'Čakovec', 'Mihaljevac 7c/7');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (79, 'Slavko', 'Škara', 'Dugo Selo', 'Ljubinkovac 473');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (80, 'Anđa', 'Butković', 'Čakovec', 'Mlinarska 6a/1');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (81, 'Matej', 'Županić', 'Jastrebarsko', 'Zamenhofove 0b/8');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (82, 'Katica', 'Kokorić', 'Novalja', 'Rockefellerova 549');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (83, 'Dragan', 'Božičković', 'Knin', 'Jurkovićeva 90');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (84, 'Nikša', 'Rumora', 'Čabar', 'Vlaška 322');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (85, 'Milka', 'Hadžić', 'Sveti Ivan Zelina', 'Mihaljevac 46');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (86, 'Saša', 'Šelendić', 'Klanjec', 'Skalinska 2');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (87, 'Ivana', 'Šeparović', 'Stari Grad', 'Mala 1');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (88, 'Karla', 'Pokos', 'Jastrebarsko', 'Streljačka 3c/3');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (89, 'Nada', 'Vučetić', 'Orahovica', 'Kraljevec 5c/5');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (90, 'Sara', 'Jurić', 'Križevci', 'Pantovčak 331');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (91, 'Željka', 'Tuksar', 'Pakrac', 'Jagodnjak 4b/4');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (92, 'Aldo', 'Bojanić', 'Omiš', 'Mirogojska 9b');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (93, 'Mile', 'Franić', 'Opatija', 'Bučarova 8');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (94, 'Pavao', 'Tešija', 'Novi Vinodolski', 'Zelenjak 9');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (95, 'Ružica', 'Bičanić', 'Buzet', 'Gračanska 14');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (96, 'Jele', 'Kupsjak', 'Pula', 'Gornje Prekrižje 3a/4');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (97, 'Josipa', 'Adžijević', 'Klanjec', 'Mletačka 5b/1');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (98, 'Marta', 'Juretić', 'Sisak', 'Jadranska 5a');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (99, 'Ante', 'Zrilić', 'Korčula', 'Kožarska 8a/5');
+INSERT INTO Vlasnik (VlasnikID, Ime, Prezime, Grad, Adresa) VALUES (100, 'Marta', 'Maržić', 'Varaždinske Toplice', 'Zamenhofova 4, 71735 Varaždinske Toplice');
 
 -- UNOS PODATAKA U TABLICU PAS
 
@@ -752,14 +754,14 @@ Data_type
 From INFORMATION_SCHEMA.COLUMNS
 where DATA_TYPE		in ('text', 'ntext', 'image');
 
--- DOHVAT SVIH VLASNIKA PASAIZ OSIJEKA
+-- DOHVAT SVIH VLASNIKA PASA IZ OSIJEKA
 SELECT * FROM Vlasnik
-where CAST (Adresa as varchar(max)) = 'Osijek';
+where CAST (Grad as varchar(max)) = 'Osijek';
 
 
 -- UNOS NOVOG VLASNIKA U BAZU
-Insert into Vlasnik (VlasnikID, Ime,Prezime, Adresa)
-VALUES (101, 'Pero', 'Perić', 'Perićeva 3, 31000, Osijek')
+Insert into Vlasnik (VlasnikID, Ime,Prezime, Grad, Adresa)
+VALUES (101, 'Pero', 'Perić', 'Osijek', 'Perićeva 3')
 
 -- UNOS NOVOG PSA U BAZU
 
@@ -769,7 +771,7 @@ VALUES (502, 'Džeki', 10, '2022-05-26', '2025-05-26', 'Zdrav', 'M', 'mješanac'
 
 -- UPDATE ADRESE VLASNIKA 93 U BAZU
 UPDATE Vlasnik	
-SET Adresa = 'Osijek'
+SET Grad = 'Osijek'
 where VlasnikID = 93;
 
 DELETE FROM Pas WHERE PasID = 102;
@@ -819,7 +821,7 @@ Select * from AzilOsijek55.dbo.Pas
 Select top (3) * from AzilOsijek55.dbo.Vlasnik
 
 select * from AzilOsijek55.dbo.vlasnik
-where Adresa = 'Hvar'
+where Grad = 'Hvar'
 
 select top (30) * from Udomljenje
 where DatumUdomljenja < 2023-05-10
@@ -868,11 +870,11 @@ where Spol = 'M' and Starost > 5;
 
 -- VJEŽBA IZRADA KOMBINIRANOG INDEKSA IZ TABLICE VLASNIK
 
-CREATE INDEX IX_Ime_Prezime_Adresa ON VLASNIK (IME, PREZIME, ADRESA);
+CREATE INDEX IX_Ime_Prezime_Grad ON VLASNIK (IME, PREZIME, Grad);
 SELECT * FROM VLASNIK
-WHERE Adresa = 'JASTREBARSKO';
+WHERE Grad = 'JASTREBARSKO';
 
--- VJEŽBA DOHVATA PSA PREMA DATUMU UDOMLJENJA I ID-U VLASNIKA - DOHVAT PASA PREMA DATUMU UDOMLJENJA NE STARIJEM OD 2021.GODINE I ID-U VLASNIKA
+-- VJEŽBA DOHVATA PSA PREMA DATUMU UDOMLJENJA I ID-U VLASNIKA - DOHVAT PASA PREMA DATUMU UDOMLJENJA NE STARIJEM OD 2020.GODINE I ID-U VLASNIKA
 
 CREATE INDEX IX_DatumUdomljenja_VlasnikID ON Udomljenje (DatumUdomljenja, VlasnikID);
 
@@ -880,9 +882,14 @@ SELECT * FROM
 Udomljenje
 WHERE DatumUdomljenja > '2020-10-06' AND VlasnikID = 97;
 
--- dohvat vlasnika prema adresi - radi ali nešto ne štima
+-- dohvat vlasnika prema adresi - radi ali nešto ne štima jer prikazuje gradove i koje treba i koje ne treba. riješeno kroz dopunu tablice vlasnik
 SELECT * FROM Vlasnik
-WHERE Adresa not in ('Varaždin', 'Rijeka', 'Karlovac', 'Pula', 'Beli Manastir', 'Dugo Selo', 'Đakovo', 'Pregrada', 'Knin')
+WHERE GRAD not in ('Varaždin', 'Rijeka', 'Karlovac', 'Pula', 'Beli Manastir', 'Dugo Selo', 'Đakovo', 'Pregrada', 'Knin', 'Ivanec', 'Opatija', 'Petrinja', 'Korčula', 'Osijek')
+
+CREATE INDEX IX_UDOMLJENJE_DATUM ON UDOMLJENJE (DatumUdomljenja);
+
+Select * FROM Udomljenje
+WHERE DatumUdomljenja < '2023-07-10';
 
 
 
